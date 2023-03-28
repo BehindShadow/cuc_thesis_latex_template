@@ -1,0 +1,91 @@
+%!TEX program = xelatex
+\documentclass[UTF8,AutoFakeBold=1,AutoFakeSlant,zihao=-4,twoside]{cucthesis}
+
+\usepackage[UTF8]{ctex}  
+\usepackage{enumerate}
+% \usepackage{algorithm}
+% \usepackage{algorithmicx}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage[normalem]{ulem}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{hhline}
+
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage[justification=centering]{caption}
+
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+% 控制table的模块
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{booktabs} %调整表格线与上下内容的间隔
+\usepackage{multirow}
+
+\usepackage{pifont}
+\usepackage[perpage,symbol*]{footmisc}
+\DefineFNsymbols{circled}{{\ding{192}}{\ding{193}}{\ding{194}}
+{\ding{195}}{\ding{196}}{\ding{197}}{\ding{198}}{\ding{199}}{\ding{200}}{\ding{201}}}
+\setfnsymbol{circled}
+
+
+% 在这里填写你的论文题目
+\newcommand{\myTitleCH}{毕业啦}  
+\newcommand{\myTitleEN}{final design} 
+
+% 在这里填写你的相关信息
+\newcommand{\myDept}{计算机与网络空间安全学院}
+\newcommand{\myMajor}{计算机}
+\newcommand{\myName}{姓名}
+\newcommand{\myClass}{班级}
+\newcommand{\myMentor}{导师}
+\newcommand{\studentID}{20193021200~~}
+\newcommand{\disdate}{2023年3月27日}
+
+\begin{document}
+
+\coverpage
+\statement
+% 中文摘要
+\begin{abstract}
+% 写摘要
+随着 3G 时代的来临，移动通信技术正从提供简单的话音业务、低速数据业务向提
+供话音业务和可变带宽的多媒体数据业务相结合的方向发展。天线，作为移动通信无线
+链路中最重要的部件，也因此成为研究重点，受到了越来越广泛的关注。
+
+\keywords {数字信号处理，音频信号频谱，matlab，fft，dsp}
+\end{abstract}
+
+% 英文摘要
+\begin{abstractEN}
+% 写摘要 英文
+With the coming of the era named „Third Generation‟, the mobile communication 
+technologies are changing its direction from providing simple services of voice and low speed 
+data transmission to providing combination services of voice and multi-media data 
+transmission with variable band-width. Antennas, as the most important part in the radio link 
+of mobile communication, become an important research topic, and attract more and more 
+attentions.
+
+\keywordsEN {dsp,spectral analysis,ff}       % 英文关键词
+\end{abstractEN}
+
+% 目录（自动生成）
+\contentpage
+
+\include{section_01}
+\include{section_02}
+\include{section_03}
+\include{section_04}
+\include{section_05}
+
+% 参考文献数据库（所有需要引用的参考文献写入references.bib文件中）
+\begin{references}
+    \bibliography{references.bib}
+\end{references}
+
+\nonumsection{后记}  % 如果不需要，请将此部分内容做成注释或删除即可
+% 尊敬的评阅老师感谢您能提出宝贵的建议。
+\end{document}
