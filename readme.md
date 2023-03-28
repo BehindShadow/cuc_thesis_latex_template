@@ -3,11 +3,13 @@
 ## 介绍
 
 本项目可以仅将内容填充近指定区域就可以生成一份精美的CUC毕业设计论文。
+
 但建议使用者掌握一定的Latex语法基础。
+
 建议使用者来自计网学院，作者不保证其他学院的模板相同。
 
  ## 内容介绍
- 本科毕业论文文件夹cuc_latex_template下面共包含了1个子目录imgs、7个.tex文件、1个.cls文件、1个.bib文件和1个.md文件。
+ 本科毕业论文文件夹cuc_final_design_latex_template下面共包含了1个子目录imgs、7个.tex文件、1个.cls文件、1个.bib文件和1个.md文件。
 
 1. imgs子目录用于存放论文中引入的图形文件，例如.jpg或者.png文件。
 
@@ -23,15 +25,16 @@
 
 
 ## 模板演示
+<center>
+<img width = '450' height ='600' src ="imgs/coverpage.png"/>
+</center>
 
-![coverpage](imgs/coverpage.png )
-
-详情请看本目录下**latex.template.pdf**文件
+详情请看本目录下**latex_template.pdf**文件
 
 ## 详情
 
 编译器建议使用: LualaTex，作者不保证在其他编译器上可以正确的渲染
-平台建议使用： [overleaf](https://www.overleaf.com/)免本地安装环境
+平台建议使用： [overleaf](https://www.overleaf.com/) 避免免本地安装环境
 
 **由于作者目前没有上交初稿，所有格式均为对比PDF和WORD手动实现，可能会出现被老师怒批的情况，如果出现此情况，可以手动修改.cls或者等作者论文通过后完善格式**
 
