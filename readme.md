@@ -34,6 +34,7 @@
 ## 实现细节
 
 编译器建议使用: LualaTex，作者不保证在其他编译器上可以正确的渲染
+
 建议使用平台： [overleaf](https://www.overleaf.com/) 避免本地安装环境
 
 ## 注意
