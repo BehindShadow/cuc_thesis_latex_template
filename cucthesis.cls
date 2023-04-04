@@ -1,9 +1,9 @@
-% Author: Runze Zhao
-% Email: 884414918@qq.com
+% Author: Yang Liu
+% Email: blueloveTH@foxmail.com
 % License: LaTeX Project Public License v1.3c
-% Date: May 27, 2023
+% Date: May 08, 2021
 
-\ProvidesClass{cucthesis}[2023/04/27 v0.22 This is Class of Communication University of China]
+\ProvidesClass{cucthesis}[2021/05/08 v0.22 Thesis Class of Communication University of China]
 \NeedsTeXFormat{LaTeX2e}
 
 \RequirePackage{kvoptions}
@@ -17,7 +17,6 @@
 \ProcessKeyvalOptions*\relax
 \LoadClass{article}
 
-
 % 设置纸张格式
 \RequirePackage[
   a4paper,
@@ -28,8 +27,9 @@
 
 \RequirePackage{amsthm,amsmath,amssymb,indentfirst,booktabs,multicol,multirow,xcolor,graphicx,fancyhdr,hologo}
 
-
 % 设置目录与引用的超链接（需要编译多次）
+% \RequirePackage{biblatex}
+% \addbibresource{references.bib}
 \RequirePackage{hyperref}
 \hypersetup{
   pdfborder={0 0 0},
@@ -43,7 +43,7 @@
 \RequirePackage[UTF8,scheme=plain]{ctex}
 \setmainfont{Times New Roman}
 
-% 1.25倍行距
+% 1.5倍行距
 % https://github.com/TheNetAdmin/zjuthesis/issues/125
 \linespread{1.50}\selectfont
 
@@ -86,7 +86,7 @@
 %\setlength{\belowcaptionskip}{0.5\ccwd}
 %\setlength{\abovecaptionskip}{0.5\ccwd}
 
-%%%%%%%%%%%%%%%%%%%%%% code 样式 %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% code style %%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{listings}
 
@@ -124,7 +124,6 @@
     \vspace{8pt}
   \end{center}
 
-\songti
 \begin{spacing}{1.7}
   \addcontentsline{toc}{section}{摘~~~要}
   \zihao{-4}\ignorespaces
@@ -147,9 +146,10 @@
   \clearpage\phantomsection
   \begin{center}
     \vspace*{2cm}
-    % \maketitleEN    % Extra command
-    \zihao{3}\textit{\myTitleEN}
-    
+    \MakeUppercase{
+        % \maketitleEN    % Extra command
+        \zihao{3}\textit{\myTitleEN}
+    }
     \vspace*{1.5cm}
 
     \zihao{4}\textbf{\heiti{ABSTRACT}}
@@ -163,7 +163,7 @@
   \zihao{-4}\ignorespaces
 }{\end{spacing}}
 
-\newcommand{\keywordsEN}[1]{\noindent{\textbf{~\\[0.5\baselineskip]Keywords:} }\textit{#1}}
+\newcommand{\keywordsEN}[1]{\noindent{\textbf{~\\[0.5\baselineskip]KEYWORDS:} }\textit{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%% 章节标题样式 %%%%%%%%%%%%%%%%%%%%%%
 
@@ -173,7 +173,7 @@
 % \renewcommand{\thesection}{\section}
 % \renewcommand{\thesubsection}{\subsection}
 
-\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+% \renewcommand{\thesubsubsection}{\arabic{subsubsection}}
 
 \newcommand{\sectionbreak}{\clearpage}
 
@@ -181,25 +181,27 @@
 {\thesection}{2pt}{\vspace{8pt}}
 
 \titleformat{\subsection}{\vspace*{-5pt} \zihao{4} \heiti}
-{\thesubsection}{3pt}{}
+{\thesubsection}{5pt}{}
 
-\titleformat{\subsubsection}{\zihao{-4} \heiti}
-{\thesubsubsection.~~}{0pt}{}
+\titleformat{\subsubsection}{\vspace*{-5pt} \zihao{-4} \heiti}
+{\thesubsubsection}{5pt}{}
 
 %%%%%%%%%%%%%%%%%%%%%% 目录样式 %%%%%%%%%%%%%%%%%%%%%%
 
-\renewcommand\contentsname{目~~~~录}
+\renewcommand\contentsname{\centerline{\zihao{3}{目~~~~录}}\vspace{0.8cm}}
+
+
 
 \titlecontents{section}[0pt]{\bfseries \songti \zihao{4}}
-{\thecontentslabel }{}
+{\thecontentslabel~}{}
 {\titlerule*[0.7em]{.}\contentspage}
 
 \titlecontents{subsection}[0\ccwd]{\heiti \zihao{-4}}
-{\thecontentslabel}{}
+{\thecontentslabel~~}{}
 {\titlerule*[0.9em]{.}\contentspage}
 
-\titlecontents{subsubsection}[3\ccwd]{\songti \zihao{-4}}
-{\thecontentslabel.~~}{}
+\titlecontents{subsubsection}[0\ccwd]{\songti \zihao{-4}}
+{\thecontentslabel~~}{}
 {\titlerule*[0.7em]{.}\contentspage}
 
 
@@ -207,39 +209,37 @@
 
 \newenvironment{references}{\clearpage\phantomsection\addcontentsline{toc}{section}{参考文献}}{\clearpage}
 
+
 \fancypagestyle{CUCThesisMain}{
     \fancyhf{}
     \cfoot{\songti\zihao{-5}{\thepage}}
     \renewcommand{\headrulewidth}{0pt}
 }
 
-\titleformat{\section}[block]{\vspace*{-24pt} \centering \zihao{3} \heiti}
-{\thesection、}{0pt}{\vspace{1pt}}
-
-% 设置一下页眉取样的格式
-\renewcommand{\sectionmark}[1]{\markboth{#1}{}} 
+% \titleformat{\section}[block]{\vspace*{-24pt} \centering \zihao{3} \heiti}
+% {\thesection、}{0pt}{\vspace{1pt}}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
 
 \newcommand{\contentpage}{
   \begin{spacing}{1.5}
     \tableofcontents
   \end{spacing}
 
-  % 内容标题样式
   \titleformat{\section}[block]{\vspace*{-5pt}  \zihao{3} \heiti}
-    {\thesection }{4pt}{\vspace{8pt}}
+{\thesection }{4pt}{\vspace{8pt}}
 
   \clearpage
   
   % 设置页眉
+   
   \fancyhead{}
-  \fancyhf[EHR]{\zihao{5}\ziju{0.08}\songti{\leftmark}}
-  \fancyhf[OHL]{\zihao{5}\ziju{0.08}\songti{中国传媒大学本科毕业论文}}
+  \fancyhf[EHR]{\zihao{-5}\ziju{0.08}\songti{\leftmark}}
+  \fancyhf[OHL]{\zihao{-5}\ziju{0.08}\songti{中国传媒大学本科毕业论文}}
   
   
   \renewcommand{\headrulewidth}{1.0pt}
   \pagenumbering{arabic}
   \setcounter{page}{1}
-  
 }
 
 \newcommand{\nonumsection}[1]{
@@ -284,41 +284,52 @@
     \vspace*{2\ccwd}
 
     \begin{figure}[h]
-        \centering
-        \includegraphics[width=10cm]{imgs/title.png}
-        % \caption{}
-        % \label{fig:title}
+    \centering
+    \includegraphics[width=10cm]{imgs/title.png}
+    % \caption{}
+    % \label{fig:title}
     \end{figure}
   
     \centering
-        \zihao{2}\songti{本科毕业论文}
+    \zihao{2}\songti{本科毕业论文}
     \vspace{0.2cm}
 
     \begin{figure}[h]
-        \centering
-        \includegraphics[width=2.8cm]{imgs/logo2.png}
-        % \caption{}
-        % \label{fig:title}
+    \centering
+    \includegraphics[width=2.8cm]{imgs/logo2.png}
+    % \caption{}
+    % \label{fig:title}
     \end{figure}
+  
+    % \zihao{-2}\textbf{\heiti\thesisTitle}
   
     % \vspace{0.5cm}
   
     \flushleft
     \noindent
         \zihao{3}\songti{
-        \textbf{中文论文题目：\dunderline{1pt}{\makebox[11cm][c]{\myTitleCH}}}
+        \textbf{中文论文题目：\dunderline{1pt}{\makebox[12cm][c]{\myTitleCH}}}
         }
     \flushleft
     \vspace{0.5cm}
     
     \noindent
         \zihao{3}\songti{
-        \textbf{英文论文题目：}\dunderline{1pt}{\makebox[11cm][c]{\myTitleEN}}}
+        \textbf{英文论文题目：}\dunderline{1pt}{\makebox[12cm][c]{\myTitleEN}}}
         
+    
     \vspace{0.5cm}
   
     \begin{spacing}{2}
-
+        % \infobox{学\hphantom{空白}院}{\myDept}
+  
+        % \infobox{专\hphantom{空白}业}{\myMajor}
+  
+        % \infobox{班\hphantom{空白}级}{\myClass}
+  
+        % \infobox{姓\hphantom{空白}名}{\myName}
+  
+        % \infobox{指导教师}{\myMentor}
         \infobox{申请人姓名：}{\myName}
 
         \infobox{指导教师\hphantom{空}：}{\myMentor}
@@ -411,3 +422,4 @@
 {\clearpage}
 
 }
+

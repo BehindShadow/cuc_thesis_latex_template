@@ -3,17 +3,26 @@
 
 \usepackage[UTF8]{ctex}  
 \usepackage{enumerate}
-% \usepackage{algorithm}
-% \usepackage{algorithmicx}
-\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{enumitem}
+
+% \usepackage{algpseudocode}
 \usepackage[normalem]{ulem}
 \usepackage{subcaption}
 \usepackage{multirow}
 \usepackage{hhline}
-
+% \usepackage{graphicx}
+% \usepackage{caption}
 \usepackage{booktabs}
 \usepackage{makecell}
 \usepackage[justification=centering]{caption}
+
+% 算法包，可以使用算法块
+\usepackage[ruled,vlined]{algorithm2e}
+\renewcommand{\algorithmcfname}{算法 -}  %<---细节与重点
+\SetKwInput{KwIn}{输入}  %<---细节与重点
+\SetKwInput{KwOut}{输出}  %<---细节与重点
+
+\usepackage{amssymb}
 
 
 \usepackage{graphicx}
@@ -24,6 +33,9 @@
 \usepackage{array}
 \usepackage{booktabs} %调整表格线与上下内容的间隔
 \usepackage{multirow}
+\usepackage{diagbox}
+
+
 
 \usepackage{pifont}
 \usepackage[perpage,symbol*]{footmisc}
