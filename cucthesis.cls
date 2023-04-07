@@ -28,8 +28,6 @@
 \RequirePackage{amsthm,amsmath,amssymb,indentfirst,booktabs,multicol,multirow,xcolor,graphicx,fancyhdr,hologo}
 
 % 设置目录与引用的超链接（需要编译多次）
-% \RequirePackage{biblatex}
-% \addbibresource{references.bib}
 \RequirePackage{hyperref}
 \hypersetup{
   pdfborder={0 0 0},
@@ -51,7 +49,6 @@
 \setlength\parindent{2\ccwd}
 
 %%%%%%%%%%%%%%%%%%%%%% 引用格式 %%%%%%%%%%%%%%%%%%%%%%
-
 \RequirePackage{gbt7714}
 \bibliographystyle{gbt7714-numerical}
 \setlength{\bibsep}{0.0pt}
@@ -112,55 +109,54 @@
 
 % 中文摘要命令
 \renewenvironment{abstract}{
-  \clearpage\phantomsection
-  \begin{center}
-    % \vspace*{-10pt}
-    \vspace*{1.5cm}
-    \zihao{3}\heiti{\myTitleCH}
+    \clearpage\phantomsection
+        \begin{center}
+        % \vspace*{-10pt}
+            \vspace*{1.5cm}
+            \zihao{3}\heiti{\myTitleCH}
     
-    \vspace*{1cm}
+            \vspace*{1cm}
     
-    \zihao{-3}\textbf{\heiti{摘~~~要}}
-    \vspace{8pt}
-  \end{center}
+            \zihao{-3}\textbf{\heiti{摘~~~要}}
+            \vspace{8pt}
+        \end{center}
 
-\begin{spacing}{1.7}
-  \addcontentsline{toc}{section}{摘~~~要}
-  \zihao{-4}\ignorespaces
+    \begin{spacing}{1.7}\snogti
+        \addcontentsline{toc}{section}{摘~~~要}
+    \zihao{-4}\ignorespaces
 }{\end{spacing}}{\clearpage}
 
 \newcommand{\keywords}[1]{\noindent\heiti{~\\[1\baselineskip]关键词：}\songti\zihao{-4} #1}
 
 \newcommand{\maketitleEN}{
-  \zihao{-2}\textbf{\heiti\thesisTitleEN}
-  \vspace{2\ccwd}
+    \zihao{-2}\textbf{\heiti\thesisTitleEN}
+    \vspace{2\ccwd}
 
-  \zihao{4}\yourNameEN
-  \vspace{1.5\ccwd}
+    \zihao{4}\yourNameEN
+    \vspace{1.5\ccwd}
 }
 
 \RequirePackage{setspace,titlesec,zhnumber,titletoc}
 
 % 英文摘要命令
 \newenvironment{abstractEN}{
-  \clearpage\phantomsection
-  \begin{center}
-    \vspace*{2cm}
-    \MakeUppercase{
-        % \maketitleEN    % Extra command
-        \zihao{3}\textit{\myTitleEN}
-    }
-    \vspace*{1.5cm}
+    \clearpage\phantomsection
+        \begin{center}
+            \vspace*{2cm}
+            \MakeUppercase{
+            % \maketitleEN    % Extra command
+                \zihao{3}\textit{\myTitleEN}
+            }
+            \vspace*{1.5cm}
 
-    \zihao{4}\textbf{\heiti{ABSTRACT}}
-    
-    \vspace{8pt}
-  \end{center}
+            \zihao{4}\textbf{\heiti{ABSTRACT}}
+            \vspace{8pt}
+        \end{center}
 
-  \addcontentsline{toc}{section}{ABSTRACT}
+    \addcontentsline{toc}{section}{ABSTRACT}
 
-  \begin{spacing}{1.7}
-  \zihao{-4}\ignorespaces
+    \begin{spacing}{1.7}
+    \zihao{-4}\ignorespaces
 }{\end{spacing}}
 
 \newcommand{\keywordsEN}[1]{\noindent{\textbf{~\\[0.5\baselineskip]KEYWORDS:} }\textit{#1}}
@@ -221,32 +217,32 @@
 \renewcommand{\sectionmark}[1]{\markboth{#1}{}}
 
 \newcommand{\contentpage}{
-  \begin{spacing}{1.5}
-    \tableofcontents
-  \end{spacing}
+    \begin{spacing}{1.5}
+        \tableofcontents
+    \end{spacing}
 
-  \titleformat{\section}[block]{\vspace*{-5pt}  \zihao{3} \heiti}
+    \titleformat{\section}[block]{\vspace*{-5pt}  \zihao{3} \heiti}
 {\thesection }{4pt}{\vspace{8pt}}
 
-  \clearpage
+    \clearpage
   
   % 设置页眉
    
-  \fancyhead{}
-  \fancyhf[EHR]{\zihao{-5}\ziju{0.08}\songti{\leftmark}}
-  \fancyhf[OHL]{\zihao{-5}\ziju{0.08}\songti{中国传媒大学本科毕业论文}}
+    \fancyhead{}
+    \fancyhf[EHR]{\zihao{-5}\ziju{0.08}\songti{\leftmark}}
+    \fancyhf[OHL]{\zihao{-5}\ziju{0.08}\songti{中国传媒大学本科毕业论文}}
   
   
-  \renewcommand{\headrulewidth}{1.0pt}
-  \pagenumbering{arabic}
-  \setcounter{page}{1}
+    \renewcommand{\headrulewidth}{1.0pt}
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
 }
 
 \newcommand{\nonumsection}[1]{
-  \clearpage\phantomsection
-  \section*{#1}
-  \stepcounter{section}
-  \addcontentsline{toc}{section}{#1}
+    \clearpage\phantomsection
+    \section*{#1}
+    \stepcounter{section}
+    \addcontentsline{toc}{section}{#1}
 }
 
 
@@ -254,8 +250,8 @@
 %%%%%%%%%%%%%%%%%%%%%% 封面 %%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\dunderline}[3][-6pt]{{
-  \setbox0=\hbox{#3}
-  \ooalign{\copy0\cr\rule[\dimexpr#1-#2\relax]{\wd0}{#2}}
+    \setbox0=\hbox{#3}
+    \ooalign{\copy0\cr\rule[\dimexpr#1-#2\relax]{\wd0}{#2}}
 }}
 
 \newcommand{\infobox}[2]{
@@ -264,42 +260,42 @@
 
 
 \newcommand{\coverpage}{
-  \begin{titlepage}
-    \vspace*{-3pt}
+    \begin{titlepage}
+        \vspace*{-3pt}
   
-    \noindent
-    \zihao{4}\kaishu{
-      分类号：\dunderline{0.6pt}{\makebox[4cm][c]{\hphantom{空白}}}\hfill \hfill
-      单位代码：\dunderline{0.6pt}{\makebox[4.5cm][c]{10033}}
-    }
+        \noindent
+        \zihao{-4}\songti{
+        分类号：\dunderline{0.6pt}{\makebox[4cm][c]{\hphantom{空白}}}\hfill \hfill
+        单位代码：\dunderline{0.6pt}{\makebox[4.5cm][c]{10033}}
+        }
     
-    \vspace*{0.5cm}
+        \vspace*{0.5cm}
     
-    \noindent
-    \zihao{4}\kaishu{
-      密\hphantom{空}级：\dunderline{0.6pt}{\makebox[4cm][c]{\hphantom{空白}}}\hfill \hfill
-      学\hphantom{空}\hphantom{空}号：\dunderline{0.6pt}{\makebox[4.5cm][c]{\studentID}}
-    }
+        \noindent
+        \zihao{-4}\songti{
+            密\hphantom{空}级：\dunderline{0.6pt}{\makebox[4cm][c]{\hphantom{空白}}}\hfill \hfill
+            学\hphantom{空}\hphantom{空}号：\dunderline{0.6pt}{\makebox[4.5cm][c]  {\studentID}}
+        }
   
-    \vspace*{2\ccwd}
+        \vspace*{2\ccwd}
 
-    \begin{figure}[h]
-    \centering
-    \includegraphics[width=10cm]{imgs/title.png}
-    % \caption{}
-    % \label{fig:title}
-    \end{figure}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=10cm]{imgs/title.png}
+        % \caption{}
+        % \label{fig:title}
+        \end{figure}
   
-    \centering
-    \zihao{2}\songti{本科毕业论文}
-    \vspace{0.2cm}
+        \centering
+        \zihao{2}\songti{本科毕业论文}
+        \vspace{0.2cm}
 
-    \begin{figure}[h]
-    \centering
-    \includegraphics[width=2.8cm]{imgs/logo2.png}
-    % \caption{}
-    % \label{fig:title}
-    \end{figure}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=2.8cm]{imgs/logo2.png}
+            % \caption{}
+            % \label{fig:title}
+        \end{figure}
   
     % \zihao{-2}\textbf{\heiti\thesisTitle}
   
@@ -311,7 +307,7 @@
         \textbf{中文论文题目：\dunderline{1pt}{\makebox[12cm][c]{\myTitleCH}}}
         }
     \flushleft
-    \vspace{0.5cm}
+    \vspace{0.7cm}
     
     \noindent
         \zihao{3}\songti{
@@ -350,17 +346,17 @@
     \centering
         \zihao{-3}\textbf{\songti{论文提交日期\dunderline{1pt}\disdate}}
 
-  \end{titlepage}
+    \end{titlepage}
   
-  \pagestyle{CUCThesisMain}
-  \pagenumbering{Roman}
-  \setcounter{page}{1}
+    \pagestyle{CUCThesisMain}
+    \pagenumbering{Roman}
+    \setcounter{page}{1}
 }
 %%%%%%%%%%%%%%%%%%%%%% 独创性声明 %%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\statement}{
 
-  \clearpage\phantomsection
+    \clearpage\phantomsection
 
     % \vspace*{-10pt}
     % \vspace*{0cm}
@@ -393,19 +389,19 @@
     
     \zihao{-4}
     \songti{
-    本毕业论文作者完全了解 \textbf{\dunderline{1pt}{中国传媒大学}}有权保留并向国家有关部门或机构送交本论文的复印件和磁盘，允许论文被查阅和借阅。本人授权\textbf{\dunderline{1pt}{中国传媒大学}} 可以将毕业论文的全部或部分内容编入有关数据库进行检索和传播，可以采用影印、缩印或扫描等复制手段保存、汇编毕业论文。
+        本毕业论文作者完全了解 \textbf{\dunderline{1pt}{中国传媒大学}}有权保留并向国家有关部门或机构送交本论文的复印件和磁盘，允许论文被查阅和借阅。本人授权\textbf{\dunderline{1pt}{中国传媒大学}} 可以将毕业论文的全部或部分内容编入有关数据库进行检索和传播，可以采用影印、缩印或扫描等复制手段保存、汇编毕业论文。
     }
     
     \zihao{-4}
         \songti{
         （保密的毕业论文在解密后适用本授权书）
-    }
+        }
 
     \vspace{1.5cm}
     \noindent
     \zihao{-4}
     \songti{
-    毕业论文作者签名：\makebox[4cm][c]{} 指导教师签名： \makebox[3cm][c]{}
+        毕业论文作者签名：\makebox[4cm][c]{} 指导教师签名： \makebox[3cm][c]{}
     }
 
     
@@ -413,12 +409,12 @@
     \noindent
     \zihao{-4}
     \songti{
-    签字日期： \makebox[1.3cm][c]{}年 \makebox[0.7cm][c]{}月 \makebox[0.7cm][c]{}日
+        签字日期： \makebox[1.3cm][c]{}年 \makebox[0.7cm][c]{}月 \makebox[0.7cm][c]{}日
      \makebox[1.6cm][c]{}
-    签字日期： \makebox[1.3cm][c]{}年 \makebox[0.7cm][c]{}月 \makebox[0.7cm][c]{}日
+        签字日期： \makebox[1.3cm][c]{}年 \makebox[0.7cm][c]{}月 \makebox[0.7cm][c]{}日
     }
     
-  \zihao{-4}\ignorespaces
+    \zihao{-4}\ignorespaces
 {\clearpage}
 
 }
