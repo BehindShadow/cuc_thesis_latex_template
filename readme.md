@@ -29,7 +29,7 @@
 <img width = '450' height ='600' src ="imgs/coverpage.png"/>
 </div>
 
-详情请看本目录下**latex_template.pdf**文件
+详情请看本目录下**thesis_latex_template.pdf**文件
 
 ## 实现细节
 
