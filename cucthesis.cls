@@ -121,7 +121,7 @@
             \vspace{8pt}
         \end{center}
 
-    \begin{spacing}{1.7}\snogti
+    \begin{spacing}{1.7}\songti
         \addcontentsline{toc}{section}{摘~~~要}
     \zihao{-4}\ignorespaces
 }{\end{spacing}}{\clearpage}
@@ -245,7 +245,22 @@
     \addcontentsline{toc}{section}{#1}
 }
 
-
+% 解决英文标题过长的问题，线的粗度设置为1pt
+\RequirePackage{adjustbox}
+\newlength\myheight
+\newcommand\Mysavedprevdepth{}%
+\newcommand\UnderlineCentered[3]{%
+  \begin{adjustbox}{minipage=[t]{\dimexpr#1\relax},gstore totalheight=\myheight,margin=0pt}%
+  \centering\leavevmode#3\par\xdef\Mysavedprevdepth{\the\prevdepth}%
+  \end{adjustbox}%
+  \hspace*{-\dimexpr#1\relax}%
+  \begin{adjustbox}{minipage=[t][\myheight]{\dimexpr#1\relax},margin=0pt}%
+  \vphantom{Eg}\lower\dimexpr#2\relax\hbox to\hsize{\leaders\hrule height 1pt\hfill\kern0pt}\par
+  \kern-\dimexpr#2\relax
+  \xleaders\vbox to\baselineskip {\vfill\hbox{\lower\dimexpr#2\relax\hbox to\hsize{\leaders\hrule height 1pt\hfill\kern0pt}}\kern-\dimexpr#2\relax}\vfill
+  \kern\Mysavedprevdepth
+  \end{adjustbox}%
+}%
 
 %%%%%%%%%%%%%%%%%%%%%% 封面 %%%%%%%%%%%%%%%%%%%%%%
 
@@ -308,10 +323,11 @@
         }
     \flushleft
     \vspace{0.7cm}
-    
+
+    % 7pt 为下划线高度设置，根据中文论文题目的距离设置的
     \noindent
         \zihao{3}\songti{
-        \textbf{英文论文题目：}\dunderline{1pt}{\makebox[12cm][c]{\myTitleEN}}}
+        \textbf{英文论文题目：\UnderlineCentered{12cm}{7pt}{\myTitleEN}}}
         
     
     \vspace{0.5cm}
