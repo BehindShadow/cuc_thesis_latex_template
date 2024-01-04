@@ -348,7 +348,7 @@
 
         \infobox{专业名称\hphantom{空}：}{\myMajor}
 
-        \infobox{研究方向\hphantom{空}：}{\myClass}
+        \infobox{研究方向\hphantom{空}：}{}
 
         \infobox{所在学院\hphantom{空}：}{\myDept}
     \end{spacing}
