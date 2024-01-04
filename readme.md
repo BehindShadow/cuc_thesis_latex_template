@@ -9,7 +9,7 @@
 建议使用者来自**计网学院**，作者不保证其他学院的模板相同。
 
 ## 内容组成
- 本科毕业论文文件夹cuc_final_design_latex_template下面共包含了1个子目录imgs、7个.tex文件、1个.cls文件、1个.bib文件和1个.md文件、1个PDF文件。
+ 本科毕业论文文件夹cuc_thesis_latex_template下面共包含了1个子目录imgs、7个.tex文件、1个.cls文件、1个.bib文件和1个.md文件、1个PDF文件。
 
 1. imgs子目录用于存放论文中引入的图形文件，例如.jpg或者.png文件。
 
